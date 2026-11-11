@@ -1,0 +1,62 @@
+name: Pruebas y despliegue del proyecto
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  pruebas:
+    name: Revisar código y ejecutar pruebas
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v7
+
+      - name: Preparar Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Instalar Ruff
+        run: python -m pip install ruff
+
+      - name: Revisar estilo del código
+        run: ruff check src tests
+
+      - name: Ejecutar pruebas automáticas
+        run: python -m unittest discover -s tests -v
+
+  despliegue:
+    name: Publicar en GitHub Pages
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: pruebas
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.publicar.outputs.page_url }}
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v7
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v6
+
+      - name: Preparar los archivos de la página
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: docs
+
+      - name: Publicar la página
+        id: publicar
+        uses: actions/deploy-pages@v5

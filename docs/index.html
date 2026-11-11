@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proyecto de scraping y DevOps</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f8; color: #222; line-height: 1.6; }
+    main { max-width: 850px; margin: 40px auto; padding: 28px; background: white; border-radius: 12px; }
+    h1, h2 { color: #164e73; }
+    code { background: #eef1f4; padding: 2px 5px; border-radius: 4px; }
+    .nota { border-left: 4px solid #d49a27; padding: 10px 14px; background: #fff8e8; }
+    footer { margin-top: 28px; color: #555; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Proyecto de extracción de datos y DevOps</h1>
+    <p>Este proyecto continúa la primera evidencia de Programación para Análisis de Datos. Se trabaja con la información del libro <strong>A Light in the Attic</strong>, publicado en Books to Scrape.</p>
+    <h2>Herramientas utilizadas</h2>
+    <p>En la primera práctica se utilizaron BeautifulSoup, Selenium y Scrapy para obtener información del producto. En esta segunda parte se usa Git y GitHub para guardar los cambios y GitHub Actions para ejecutar revisiones y pruebas automáticas.</p>
+    <h2>Pruebas automáticas</h2>
+    <p>El flujo de trabajo revisa el estilo del código con Ruff y ejecuta pruebas con <code>unittest</code>. Estas pruebas comprueban funciones para limpiar valores y calcular la completitud de los datos.</p>
+    <h2>Despliegue</h2>
+    <p>Cuando los cambios llegan a la rama <code>main</code> y las pruebas terminan correctamente, GitHub Actions publica esta página mediante GitHub Pages.</p>
+    <p class="nota"><strong>Nota:</strong> Books to Scrape es una página de demostración. Los precios y las calificaciones se usan únicamente para practicar.</p>
+    <footer>Proyecto académico · Programación para Análisis de Datos · Mariano Monsalve</footer>
+  </main>
+</body>
+</html>
