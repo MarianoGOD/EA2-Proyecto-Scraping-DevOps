@@ -1,7 +1,7 @@
 # Proyecto de scraping con Git, GitHub y DevOps
 
 ## Descripción
-Este proyecto continúa la Evidencia de Aprendizaje 1 de Programación para Análisis de Datos. Se toma como referencia la extracción de información del libro **A Light in the Attic** en la página de demostración Books to Scrape.
+Este proyecto continúa la Evidencia de Aprendizaje 1 de Programación para Análisis de Datos. Se toma como referencia la extracción de información del libro A Light in the Attic en la página de demostración Books to Scrape.
 
 El notebook de la primera evidencia se guarda en la carpeta `notebooks/`. El proyecto también incluye funciones sencillas para revisar los datos extraídos, pruebas automáticas y un flujo de trabajo con GitHub Actions.
 
@@ -17,7 +17,7 @@ EA2_Proyecto_Scraping_DevOps/
 ├── docs/
 │   └── index.html
 ├── notebooks/
-│   └── (aquí va el notebook de la Evidencia 1)
+│   └── (Monsalve_Mariano_Analizando_EA1)
 ├── src/
 │   └── analisis.py
 ├── tests/
